@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+    <title>航班流量监控</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/screen.css?19">
+</head>
+
+<body>
+	<div class="loading_bg" id="loading">
+		<div class="loading loadingAin"><img src="images/loading.gif"></div>
+	</div>
+    <div class="container">
+        <div class="head-box">
+			<div class="logo"><img src="images/union_logo.png"></div>
+			<h2 class="title">航班流量监控信息</h2>
+			<div class="title-bg"></div>
+			<div class="date"></div>
+        </div>
+        <div class="left-box">
+			<div class="shadow-box">
+				<div class="chart-bg">
+					<h2 class="title">所有航班飞行统计</h2>
+					<div class="ui-chart"  id="pieChart"></div>   
+				</div>
+			</div>
+			<div class="shadow-box">
+				<div class="chart-bg">
+					<h2 class="title">在飞航班飞行区域分布</h2>
+					<div class="ui-chart"  id="pieChart2"></div>   
+				</div>
+			</div>
+			<div class="shadow-box">
+				<div class="chart-bg">
+					<h2 class="title">航班流量(MB)/分钟使用情况</h2>
+					<div class="ui-chart"  id="barChart"></div>   
+				</div>
+			</div>
+		</div>
+        <div class="main-box">
+			<ul class="total-data">
+				<li class="current"><img src="images/menu_icon1_cur.png" alt="">当前使用流量<span class="flight-traffic"></span></li>
+				<li class=""><img src="images/menu_icon2_cur.png" alt="">当前在飞航班数量<span class="flight-num"></span></li>
+				<li class=""><img src="images/menu_icon3_cur.png" alt="">当前在线人数<span class="paxcnt-sum"></span></li>
+			</ul>
+
+			<div class="weather" id="weather">
+				<div class="type">
+					<div class="icon sunny">
+						<div class="sun">
+							<div class="rays"></div>
+						</div>
+					</div>
+						
+					<div class="icon rainy">
+						<div class="cloud"></div>
+						<div class="rain"></div>
+					</div>
+						
+					<div class="icon cloudy">
+						<div class="cloud"></div>
+						<div class="cloud"></div>
+					</div>
+						
+					<div class="icon flurries">
+						<div class="cloud"></div>
+						<div class="snow">
+							<div class="flake"></div>
+							<div class="flake"></div>
+						</div>
+					</div>
+						
+					<div class="icon thunder-storm">
+						<div class="cloud"></div>
+						<div class="lightning">
+							<div class="bolt"></div>
+							<div class="bolt"></div>
+						</div>
+					</div>
+						
+					<div class="icon sun-shower">
+						<div class="cloud"></div>
+						<div class="sun">
+							<div class="rays"></div>
+						</div>
+						<div class="rain"></div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="map-box">
+			<div class="chart-box">
+				<div class="ui-chart"  id="flightChart" style="padding: 0; opacity: 0;"></div>   
+				<div class="global-ui" id="global"></div>
+			</div>
+		</div>
+		
+        <div class="right-box">
+				
+			<div class="shadow-box">
+					<div class="chart-bg">
+						<h2 class="title">在飞航班流量排名</h2>
+						<div class="box">
+							<div class="th">
+								<span>飞机编号</span>
+								<span>航班号</span>
+								<span>使用流量</span>
+								<span>在线人数</span>
+								<span>起飞城市</span>
+								<span>到达城市</span>
+							</div>
+							<div class="flightTable-box">
+								<ul class="flightTable scroll-text flight-info-js"></ul>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="shadow-box">
+				
+				<div class="swiper-container swiper-wrapper-js">
+						
+				</div>
+			</div>
+			<div class="shadow-box">
+					<div class="chart-bg">
+						<h2 class="title">在飞航班终端数排名</h2>
+						<div class="box">
+							<div class="th">
+								<span>序列号</span>
+								<span>飞机编号</span>
+								<span>航班号</span>
+								<span>在线终端</span>
+								<span>在线人数</span>
+								<span>使用流量</span>
+							</div>
+							<div class="flightTable-box">
+								<ul class="flightTable device-info-js"></ul>
+							</div>
+						</div>
+					</div>
+			</div>
+
+		</div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/china.js"></script>
+    <script type="text/javascript" src="js/world.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	
+	<script type="text/javascript" src="js/echarts-gl.min.js"></script>
+	<!-- <script type="text/javascript" src="js/ecStat.min.js"></script>
+	<script type="text/javascript" src="js/dataTool.min.js"></script>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&__ec_v__=20190126"></script>
+	<script type="text/javascript" src="js/bmap.min.js"></script>
+	<script type="text/javascript" src="js/simplex.js"></script> -->
+
+	<script type="text/javascript" src="js/screen1.js?6"></script>   
+</body>
+</html>
+
